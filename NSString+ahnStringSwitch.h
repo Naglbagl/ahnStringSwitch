@@ -18,6 +18,15 @@
 
 @interface NSString (StringSwitch)
 
--(bool)switchWithCases:(NSArray *)cases withStatements:(void(^)(void))statements,...;
+//Basic switch compairing strings
+-(bool)switchWithCases:(NSArray *)cases withStatements:(void(^)(NSString *caseString))statements,...;
+
+//Switch where you give it a bool operator it will use to compair the strings with. If it find a match it will stop compairing the rest of the strings
+
+-(bool)switchWithBoolBlock:(bool(^)(NSString *baseString, NSString *caseString))compairBlock WithCases:(NSArray *)cases withStatements:(void(^)(NSString *caseString))statements,...;
+
+//Switch where you give it a bool returning block it will use to compair the strings with. If it find a match it will add it to the return array
+-(NSArray*)arraySwitchWithBoolBlock:(bool(^)(NSString *baseString, NSString *caseString))compairBlock WithCases:(NSArray *)cases withStatements:(void(^)(NSString *caseString))statements,...;
+
 
 @end
