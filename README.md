@@ -3,6 +3,10 @@ ahnStringSwitch
 
 A switch like function for NSStrings in Objective-C
 
+View Demo project to see how it works beter. 
+
+Also check out https://github.com/Naglbagl/ahnObjectSwitch for an NSObject implementation of ahnStringSwitch.
+
 Example:
 
     NSString *strOne = @"Hello World"; //Get the string you want to use
